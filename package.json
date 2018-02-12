@@ -1,6 +1,6 @@
 {
   "name": "@stayer/engine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "HTTP requests performing module of the Stayer framework.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
