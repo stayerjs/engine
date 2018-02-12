@@ -1,8 +1,9 @@
 {
   "name": "@stayer/engine",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "HTTP requests performing module of the Stayer framework.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build",
@@ -10,6 +11,10 @@
   },
   "author": "Anton Bakhurynskyi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stayerjs/engine.git"
+  },
   "devDependencies": {
     "@types/node": "^9.4.5",
     "typescript": "^2.7.1"
