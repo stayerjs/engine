@@ -1,4 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http';
+import { parse } from 'url';
 import { Endpoint, HttpListener } from '@stayer/interfaces';
 
 import matchEndpoint from './match-endpoint';
@@ -9,7 +10,8 @@ async function execute(endpoints: Endpoint[], req: IncomingMessage, res: ServerR
   const endpoint = matchEndpoint(endpoints, req);
   const fn = await endpoint.fn$;
   const body = await parseJsonBody(req);
-  const result = await fn(req, res, body);
+  const query: object = parse(req.url as string, true).query;
+  const result = await fn(req, res, body, query);
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify(result));
 }
